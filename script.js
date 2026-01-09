@@ -5,6 +5,49 @@ const WHATSAPP_NUMBER = '5491120345160';
 const WHATSAPP_MESSAGE_PREFIX = 'Hola, me contacto desde la web de Ferretería Dany.\n\n';
 
 // ============================================
+// UTILIDADES DE PERFORMANCE
+// ============================================
+// Throttle function para optimizar eventos de scroll/resize
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Debounce function
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            timeout = null;
+            if (!immediate) func(...args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func(...args);
+    };
+}
+
+// RequestAnimationFrame wrapper para scroll
+let scrollTicking = false;
+function onScroll(callback) {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+            callback();
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }
+}
+
+// ============================================
 // MENÚ MÓVIL
 // ============================================
 const menuToggle = document.getElementById('menuToggle');
@@ -600,46 +643,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    // Smooth scroll para enlaces del menú
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href.startsWith('#')) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
+    // Smooth scroll ya está manejado arriba, no duplicar
 });
 
 // ============================================
-// SMOOTH SCROLL PARA ENLACES INTERNOS
+// SMOOTH SCROLL PARA ENLACES INTERNOS (UNIFICADO)
 // ============================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && href.startsWith('#')) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-    });
-});
+// Ya está manejado en DOMContentLoaded, no duplicar
 
 // ============================================
 // MEJORAS DE UX
@@ -664,25 +674,27 @@ if (phoneInput) {
     });
 }
 
-// Animación del botón flotante al hacer scroll
+// Animación del botón flotante al hacer scroll (optimizado)
 let lastScrollTop = 0;
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (floatingWhatsApp) {
-        if (scrollTop > lastScrollTop && scrollTop > 200) {
-            // Scrolling down
-            floatingWhatsApp.style.transform = 'translateY(100px)';
-            floatingWhatsApp.style.opacity = '0.5';
-        } else {
-            // Scrolling up
-            floatingWhatsApp.style.transform = 'translateY(0)';
-            floatingWhatsApp.style.opacity = '1';
+window.addEventListener('scroll', throttle(() => {
+    onScroll(() => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (floatingWhatsApp) {
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                // Scrolling down
+                floatingWhatsApp.style.transform = 'translateY(100px)';
+                floatingWhatsApp.style.opacity = '0.5';
+            } else {
+                // Scrolling up
+                floatingWhatsApp.style.transform = 'translateY(0)';
+                floatingWhatsApp.style.opacity = '1';
+            }
         }
-    }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}, false);
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+}, 100), { passive: true });
 
 // ============================================
 // VALIDACIÓN EN TIEMPO REAL
@@ -778,15 +790,11 @@ function initTestimonialsCarousel() {
     
     updateButtons();
     
-    // Recalcular en resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            scrollPosition = carousel.scrollLeft;
-            updateButtons();
-        }, 250);
-    });
+    // Recalcular en resize (optimizado)
+    window.addEventListener('resize', debounce(() => {
+        scrollPosition = carousel.scrollLeft;
+        updateButtons();
+    }, 250), { passive: true });
 }
 
 // Carrusel de Productos Destacados
@@ -843,23 +851,21 @@ function initProductsCarousel() {
     
     updateCarousel();
     
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', debounce(() => {
         const maxIndex = getMaxIndex();
         if (currentIndex > maxIndex) currentIndex = maxIndex;
         updateCarousel();
-    });
+    }, 250), { passive: true });
 }
 
 // FAQ ya inicializado arriba, no duplicar
 
 
 // ============================================
-// HEADER STICKY CON SOMBRA
+// HEADER STICKY CON SOMBRA (OPTIMIZADO)
 // ============================================
 const header = document.getElementById('mainHeader') || document.querySelector('.header');
 if (header) {
-    let lastScrollY = window.scrollY;
-    
     function updateHeader() {
         const currentScrollY = window.scrollY;
         
@@ -868,22 +874,19 @@ if (header) {
         } else {
             header.classList.remove('scrolled');
         }
-        
-        lastScrollY = currentScrollY;
     }
     
-    window.addEventListener('scroll', function() {
-        window.requestAnimationFrame(updateHeader);
-    });
+    window.addEventListener('scroll', throttle(() => {
+        onScroll(updateHeader);
+    }, 50), { passive: true });
     
     // Inicializar
     updateHeader();
 }
 
 // ============================================
-// OCULTAR WHATSAPP AL LLEGAR AL FOOTER
+// OCULTAR WHATSAPP AL LLEGAR AL FOOTER (OPTIMIZADO)
 // ============================================
-const floatingWhatsApp = document.getElementById('floatingWhatsApp');
 const footer = document.querySelector('.footer');
 
 if (floatingWhatsApp && footer) {
@@ -899,9 +902,9 @@ if (floatingWhatsApp && footer) {
         }
     }
     
-    window.addEventListener('scroll', function() {
-        window.requestAnimationFrame(checkFooterVisibility);
-    });
+    window.addEventListener('scroll', throttle(() => {
+        onScroll(checkFooterVisibility);
+    }, 100), { passive: true });
     
     // Inicializar
     checkFooterVisibility();
@@ -1076,17 +1079,10 @@ if (floatingWhatsApp && floatingText) {
     // Actualizar al cargar
     updateFloatingText();
     
-    // Actualizar al hacer scroll (con throttling)
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                updateFloatingText();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
+    // Actualizar al hacer scroll (optimizado)
+    window.addEventListener('scroll', throttle(() => {
+        onScroll(updateFloatingText);
+    }, 100), { passive: true });
 }
 
 // ============================================

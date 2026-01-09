@@ -39,8 +39,14 @@
     <!-- Preconnect para mejor performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://wa.me">
     
-    <link rel="stylesheet" href="styles.css?v=63.0">
+    <!-- Preload crítico -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" as="style">
+    
+    <link rel="stylesheet" href="styles.css?v=64.0">
     
     <!-- Schema JSON-LD para SEO Local -->
     <script type="application/ld+json">
@@ -348,7 +354,7 @@
                     </a>
                 </div>
             <div class="services-grid-varied">
-                <div class="service-card-large slide-up" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80');">
+                <div class="service-card-large slide-up" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80');" loading="lazy" aria-label="Materiales para la construcción">
                     <div class="service-icon-large">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
@@ -359,7 +365,7 @@
                     <h3>Materiales para la construcción</h3>
                     <p>Productos para obras, reformas y construcción en general.</p>
                 </div>
-                <div class="service-card-medium slide-up" style="background-image: url('https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80');">
+                <div class="service-card-medium slide-up" style="background-image: url('https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80');" loading="lazy" aria-label="Pinturas y terminaciones">
                     <div class="service-icon-medium">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
@@ -369,7 +375,7 @@
                     <h3>Pinturas y terminaciones</h3>
                     <p>Pinturas y productos para terminaciones de calidad.</p>
                 </div>
-                <div class="service-card-medium slide-up" style="background-image: url('https://images.unsplash.com/photo-1628177142898-93e36b4f32d3?w=600&q=80');">
+                <div class="service-card-medium slide-up" style="background-image: url('https://images.unsplash.com/photo-1628177142898-93e36b4f32d3?w=600&q=80');" loading="lazy" aria-label="Griferías y sanitarios">
                     <div class="service-icon-medium">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -380,7 +386,7 @@
                     <h3>Griferías y sanitarios</h3>
                     <p>Inodoros, lavatorios, grifería y accesorios para baños.</p>
                 </div>
-                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=80');">
+                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=80');" loading="lazy" aria-label="Electricidad">
                     <div class="service-icon-small">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -391,7 +397,7 @@
                     <h3>Electricidad</h3>
                     <p>Productos eléctricos e iluminación</p>
                 </div>
-                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80');">
+                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80');" loading="lazy" aria-label="Herramientas">
                     <div class="service-icon-small">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -400,7 +406,7 @@
                     <h3>Herramientas</h3>
                     <p>Para hogar e industria</p>
                 </div>
-                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80');">
+                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80');" loading="lazy" aria-label="Mantenimiento">
                     <div class="service-icon-small">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -857,7 +863,7 @@
         <span class="floating-text" id="floatingText">¿Te cotizamos ahora?</span>
     </a>
 
-    <script src="script.js?v=10.0"></script>
+    <script src="script.js?v=11.0" defer></script>
     
     <!-- Analytics placeholder (reemplazar con tu código real) -->
     <!-- Google Analytics -->

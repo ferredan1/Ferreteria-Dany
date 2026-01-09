@@ -319,6 +319,67 @@ body {
     .container {
         padding: 0 var(--space-3);
     }
+    
+    .services-process-segmentation-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .process-steps-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .services-grid-varied {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .service-card-large,
+    .service-card-medium,
+    .service-card-small {
+        grid-column: span 1;
+    }
+    
+    .segments-grid-integrated {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .differential-features {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+    
+    .about-content-institutional {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .about-stats-sidebar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3);
+    }
+}
 
 /* ============================================
    TOP BAR

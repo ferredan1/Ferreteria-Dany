@@ -342,9 +342,7 @@ function initFAQ() {
                     const otherAnswer = otherItem.querySelector('.faq-answer');
                     if (otherAnswer) {
                         otherAnswer.style.maxHeight = '0';
-                        otherAnswer.style.opacity = '0';
-                        otherAnswer.style.paddingTop = '0';
-                        otherAnswer.style.paddingBottom = '0';
+                        otherAnswer.style.padding = '0';
                     }
                 }
             });

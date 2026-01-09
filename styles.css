@@ -248,12 +248,33 @@ body {
         grid-template-columns: 1.1fr 0.9fr;
     }
     
+    .services-process-segmentation-row {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+    
     .process-steps-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .services-grid-varied {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .service-card-large {
+        grid-column: span 2;
+    }
+    
+    .service-card-medium {
+        grid-column: span 2;
+    }
+    
+    .service-card-small {
+        grid-column: span 1;
+    }
+    
+    .segments-grid-integrated {
+        grid-template-columns: 1fr;
     }
     
     .differential-features {
@@ -953,12 +974,20 @@ section::before {
     background: var(--gray-50);
 }
 
-.services-process-wrapper {
+.services-process-segmentation-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
     margin-bottom: var(--space-7);
+    align-items: start;
+}
+
+.services-process-wrapper {
+    margin-bottom: 0;
 }
 
 .services-segmentation-wrapper {
-    margin-bottom: var(--space-7);
+    margin-bottom: 0;
 }
 
 .services-subtitle {
@@ -972,8 +1001,8 @@ section::before {
 
 .segments-grid-integrated {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
     margin-top: var(--space-5);
 }
 
@@ -1059,9 +1088,9 @@ section::before {
 
 .process-steps-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-5);
-    margin-top: var(--space-6);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-5);
 }
 
 .process-step-card {
@@ -1182,8 +1211,8 @@ section::before {
 
 .services-grid-varied {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
     margin-top: var(--space-5);
 }
 
@@ -1202,16 +1231,14 @@ section::before {
 
 .service-card-large {
     grid-column: span 2;
-    grid-row: span 2;
-    min-height: 300px;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 .service-card-medium {
-    grid-column: span 1;
-    grid-row: span 1;
+    grid-column: span 2;
     min-height: 200px;
     display: flex;
     flex-direction: column;
@@ -1220,8 +1247,7 @@ section::before {
 
 .service-card-small {
     grid-column: span 1;
-    grid-row: span 1;
-    min-height: 150px;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

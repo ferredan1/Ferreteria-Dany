@@ -322,8 +322,12 @@ function initFAQ() {
         answer.style.overflow = 'hidden';
         answer.style.display = 'block';
         
+        // Remover listeners anteriores si existen
+        const newQuestion = question.cloneNode(true);
+        question.parentNode.replaceChild(newQuestion, question);
+        
         // Event listener directo
-        question.onclick = function(e) {
+        newQuestion.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
@@ -339,6 +343,8 @@ function initFAQ() {
                     if (otherAnswer) {
                         otherAnswer.style.maxHeight = '0';
                         otherAnswer.style.opacity = '0';
+                        otherAnswer.style.paddingTop = '0';
+                        otherAnswer.style.paddingBottom = '0';
                     }
                 }
             });
@@ -376,7 +382,7 @@ function initFAQ() {
                     console.log('Altura aplicada:', height + 'px');
                 });
             }
-        };
+        });
     });
     
     console.log('FAQ inicializado');

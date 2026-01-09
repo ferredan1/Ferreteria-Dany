@@ -831,12 +831,29 @@ section {
     overflow: hidden;
 }
 
-section:nth-child(even) {
+/* Alternancia de fondos para secciones */
+.services-section {
+    background: var(--white);
+}
+
+.about-section {
     background: var(--gray-50);
 }
 
-section:nth-child(odd) {
+.differential-section {
+    background: var(--primary);
+}
+
+.testimonials-section {
     background: var(--white);
+}
+
+.contact-section {
+    background: var(--gray-50);
+}
+
+.faq-section {
+    background: var(--primary);
 }
 
 section::before {
@@ -1338,15 +1355,18 @@ section::before {
 }
 
 .service-card-small:nth-of-type(4) {
-    grid-column: span 4;
+    grid-column: span 3;
+    grid-row: span 1;
 }
 
 .service-card-small:nth-of-type(5) {
     grid-column: span 4;
+    grid-row: span 1;
 }
 
 .service-card-small:nth-of-type(6) {
-    grid-column: span 4;
+    grid-column: span 5;
+    grid-row: span 1;
 }
 
 /* Mejoras de hover para tarjetas de servicios */

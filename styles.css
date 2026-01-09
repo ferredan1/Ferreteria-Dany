@@ -1161,10 +1161,10 @@ section::before {
 }
 
 .segment-card-integrated {
-    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
-    padding: var(--space-5);
-    border-radius: var(--radius-lg);
-    border: 2px solid var(--gray-200);
+    background: var(--white);
+    padding: var(--space-6);
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -1172,7 +1172,7 @@ section::before {
     align-items: center;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
 }
 
 .segment-card-integrated::before {
@@ -1193,9 +1193,9 @@ section::before {
 }
 
 .segment-card-integrated:hover {
-    border-color: var(--accent);
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    border-color: var(--gray-300);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     background: var(--white);
 }
 
@@ -1250,13 +1250,13 @@ section::before {
 .process-step-card {
     background: var(--white);
     padding: var(--space-5);
-    border-radius: var(--radius-lg);
-    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
     text-align: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
 }
 
 .process-step-card::after {

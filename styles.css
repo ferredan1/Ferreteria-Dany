@@ -1045,11 +1045,14 @@ section::before {
 
 .about-subtitle {
     font-family: var(--font);
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-top: var(--space-4);
-    margin-bottom: var(--space-2);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-3);
     letter-spacing: var(--letter-spacing-tight);
 }
 
@@ -1140,9 +1143,11 @@ section::before {
 }
 
 .about-stat-box:hover {
-    border-color: var(--accent);
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    border-color: rgba(230, 57, 70, 0.2);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 
+        0 12px 50px rgba(0, 0, 0, 0.12),
+        0 4px 20px rgba(230, 57, 70, 0.1);
     background: var(--white);
 }
 
@@ -1204,11 +1209,14 @@ section::before {
 }
 
 .mission-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    color: var(--gray-900);
-    margin-bottom: var(--space-4);
-    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-5);
+    letter-spacing: -0.03em;
 }
 
 .mission-text {
@@ -1262,12 +1270,16 @@ section::before {
 }
 
 .services-subtitle {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: var(--space-5);
-    padding-bottom: var(--space-2);
-    border-bottom: 2px solid var(--accent);
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, var(--accent) 0%, var(--whatsapp) 100%) 1;
 }
 
 .segments-grid-integrated {
@@ -1683,11 +1695,14 @@ section::before {
 }
 
 .differential-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: var(--space-8);
-    letter-spacing: -0.03em;
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-10);
+    letter-spacing: -0.04em;
 }
 
 .differential-features {

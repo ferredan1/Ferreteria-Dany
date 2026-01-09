@@ -115,12 +115,19 @@ body {
 }
 
 .top-bar-links a {
-    color: var(--gray-300);
-    text-decoration: none;
+    color: var(--white);
+    text-decoration: underline;
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .top-bar-links a:hover {
+    opacity: 0.8;
+}
+
+.top-bar-links a svg {
     color: var(--white);
 }
 

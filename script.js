@@ -349,24 +349,17 @@ function initFAQ() {
             
             if (isActive) {
                 // Cerrar
-                console.log('Cerrando item', index);
                 item.classList.remove('active');
                 answer.style.maxHeight = '0';
-                answer.style.opacity = '0';
-                answer.style.paddingTop = '0';
-                answer.style.paddingBottom = '0';
+                answer.style.padding = '0';
             } else {
                 // Abrir
-                console.log('Abriendo item', index);
                 item.classList.add('active');
                 
                 // Medir altura real del contenido
                 answer.style.maxHeight = 'none';
-                answer.style.height = 'auto';
-                answer.style.opacity = '0';
                 const height = answer.scrollHeight;
                 answer.style.maxHeight = '0';
-                answer.style.height = '0';
                 
                 // Forzar reflow
                 void answer.offsetHeight;
@@ -374,10 +367,7 @@ function initFAQ() {
                 // Animar a la altura real
                 requestAnimationFrame(() => {
                     answer.style.maxHeight = height + 'px';
-                    answer.style.opacity = '1';
-                    answer.style.paddingTop = '0';
-                    answer.style.paddingBottom = 'var(--space-5)';
-                    console.log('Altura aplicada:', height + 'px');
+                    answer.style.padding = '';
                 });
             }
         });

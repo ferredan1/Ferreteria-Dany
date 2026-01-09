@@ -708,8 +708,7 @@ body {
 }
 
 .hero-form-wrapper {
-    position: sticky;
-    top: calc(32px + 80px + var(--space-3));
+    position: relative;
 }
 
 .form-card {
@@ -1585,31 +1584,31 @@ section::before {
 }
 
 .differential-feature:hover {
-    transform: translateY(-6px);
-    border-color: rgba(148, 163, 184, 0.6);
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+    border-color: var(--gray-300);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .differential-feature svg {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     padding: var(--space-2);
-    background: rgba(37, 211, 102, 0.18);
-    border-radius: 999px;
-    color: var(--whatsapp);
+    background: var(--gray-100);
+    border-radius: 12px;
+    color: var(--gray-700);
     margin-bottom: var(--space-2);
 }
 
 .differential-feature strong {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--gray-900);
     margin-bottom: var(--space-1);
 }
 
 .differential-feature p {
-    font-size: 0.975rem;
-    color: var(--gray-300);
+    font-size: 1rem;
+    color: var(--gray-600);
     line-height: 1.7;
 }
 

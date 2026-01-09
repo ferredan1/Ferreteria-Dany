@@ -1430,9 +1430,12 @@ section::before {
 }
 
 .process-step-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    border-color: rgba(230, 57, 70, 0.2);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 12px 50px rgba(0, 0, 0, 0.12),
+        0 4px 20px rgba(230, 57, 70, 0.1);
+    background: var(--white);
 }
 
 .process-step-number {

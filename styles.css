@@ -289,20 +289,22 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-size: clamp(3rem, 8vw, 5.5rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.05;
     color: var(--primary);
-    letter-spacing: -0.03em;
-    margin-bottom: var(--space-md);
+    letter-spacing: -0.04em;
+    margin: var(--space-xl) 0 var(--space-lg);
+    max-width: 900px;
 }
 
 .hero-subtitle {
     font-size: clamp(1.125rem, 1.8vw, 1.25rem);
     line-height: 1.8;
-    color: var(--gray-600);
-    max-width: 700px;
-    margin: 0 auto var(--space-lg);
+    color: var(--gray-500);
+    font-weight: 400;
+    max-width: 650px;
+    margin: 0 auto var(--space-xl);
 }
 
 .hero-cta {
@@ -315,16 +317,17 @@ body {
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
-    padding: 1.125rem 2.25rem;
+    padding: 1.25rem 2.5rem;
     background: var(--whatsapp);
     color: var(--white);
     border: none;
     border-radius: var(--radius);
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.125rem;
     text-decoration: none;
     cursor: pointer;
     transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
 }
 
 .btn-primary-hero:hover {
@@ -336,12 +339,12 @@ body {
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
-    padding: 1.125rem 2.25rem;
+    padding: 1.25rem 2.5rem;
     background: transparent;
-    color: var(--gray-700);
-    border: 2px solid var(--gray-300);
+    color: var(--gray-600);
+    border: 1.5px solid var(--gray-300);
     border-radius: var(--radius);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
     cursor: pointer;
@@ -521,15 +524,16 @@ body {
    SECTIONS
    ============================================ */
 section {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-4xl) 0 var(--space-5xl);
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--space-4xl);
-    max-width: 900px;
+    margin-bottom: var(--space-5xl);
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 var(--space-lg);
 }
 
 .section-badge {
@@ -546,19 +550,20 @@ section {
 }
 
 .section-title {
-    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.2;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
     color: var(--primary);
-    margin-bottom: var(--space-md);
-    letter-spacing: -0.02em;
+    margin: var(--space-lg) 0 var(--space-md);
+    letter-spacing: -0.03em;
 }
 
 .section-description {
     font-size: clamp(1rem, 1.5vw, 1.125rem);
-    line-height: 1.7;
-    color: var(--gray-600);
-    max-width: 700px;
+    line-height: 1.8;
+    color: var(--gray-500);
+    font-weight: 400;
+    max-width: 650px;
     margin: 0 auto;
 }
 
@@ -602,6 +607,7 @@ section {
     border: 1px solid var(--gray-200);
     transition: var(--transition);
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .process-step-number {
@@ -659,6 +665,8 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .segment-card {
@@ -670,6 +678,14 @@ section {
     text-align: center;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.segment-card p {
+    color: var(--gray-500);
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
 }
 
 .segment-card h4 {
@@ -744,6 +760,8 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-card {
@@ -756,6 +774,13 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.product-card p {
+    color: var(--gray-500);
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 .product-card:hover {
@@ -907,9 +932,11 @@ section {
 
 .mission-content p {
     font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--gray-700);
+    line-height: 1.9;
+    color: var(--gray-600);
+    font-weight: 400;
     margin-bottom: var(--space-lg);
+    max-width: 600px;
 }
 
 .about-info {
@@ -920,9 +947,11 @@ section {
 
 .about-info p {
     font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--gray-700);
+    line-height: 1.9;
+    color: var(--gray-600);
+    font-weight: 400;
     margin-bottom: var(--space-lg);
+    max-width: 600px;
 }
 
 .about-list {
@@ -1094,15 +1123,24 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .differential-feature {
     background: var(--white);
-    padding: var(--space-xl);
+    padding: var(--space-2xl);
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-200);
     text-align: center;
     transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.differential-feature p {
+    color: var(--gray-500);
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 .differential-feature:hover {
@@ -1158,7 +1196,10 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .testimonials-link {
@@ -1187,10 +1228,17 @@ section {
 
 .testimonial-card {
     background: var(--white);
-    padding: var(--space-xl);
+    padding: var(--space-2xl);
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-200);
     transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.testimonial-text {
+    color: var(--gray-600);
+    font-weight: 400;
+    line-height: 1.8;
 }
 
 .testimonial-card:hover {
@@ -1261,15 +1309,24 @@ section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .contact-card {
     background: var(--white);
-    padding: var(--space-xl);
+    padding: var(--space-2xl);
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-200);
     text-align: center;
     transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.contact-card p {
+    color: var(--gray-500);
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 .contact-card:hover {

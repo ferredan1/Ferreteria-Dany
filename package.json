@@ -1,0 +1,12 @@
+{
+  "name": "ferreteria-dany",
+  "version": "1.0.0",
+  "description": "Landing page para Ferretería Dany",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": ["ferreteria", "landing-page"],
+  "author": "",
+  "license": "ISC"
+}

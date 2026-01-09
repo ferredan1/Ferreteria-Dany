@@ -71,6 +71,8 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 /* Tipografía para headings */
@@ -101,12 +103,16 @@ h4 {
 }
 
 body {
-    font-family: var(--font);
+    font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
     color: var(--gray-800);
     background: var(--white);
     -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 *:focus-visible {

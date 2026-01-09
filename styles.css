@@ -1405,7 +1405,7 @@ section {
    FAQ SECTION
    ============================================ */
 .faq-section {
-    background: var(--white);
+    background: #f8f9fa;
     padding: var(--space-5xl) 0;
 }
 

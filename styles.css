@@ -286,6 +286,22 @@ body {
     position: relative;
 }
 
+@media (max-width: 1024px) {
+    .hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-3xl);
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-form-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
 .hero-badge {
     display: inline-block;
     padding: var(--space-xs) var(--space-md);

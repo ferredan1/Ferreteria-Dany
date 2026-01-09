@@ -4,11 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    /* Colores Exora */
+    /* Colores Ferretería Dany */
     --primary: #000000;
     --primary-light: #1a1a1a;
-    --accent: #3b82f6;
-    --accent-light: #60a5fa;
+    --accent: #e63946;
+    --accent-dark: #c1121f;
+    --accent-light: #f77f8a;
     --white: #ffffff;
     --gray-50: #fafafa;
     --gray-100: #f5f5f5;
@@ -165,6 +166,7 @@ body {
 
 .logo .logo-accent {
     color: var(--accent);
+    font-weight: 900;
 }
 
 .nav {

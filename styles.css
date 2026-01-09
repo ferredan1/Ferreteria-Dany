@@ -1958,14 +1958,14 @@ section::before {
 }
 
 .faq-item:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow-md);
+    border-color: var(--gray-300);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
 }
 
 .faq-item.active {
-    border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.2);
+    border-color: var(--gray-300);
+    background: var(--white);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
 .faq-question {
@@ -1981,7 +1981,7 @@ section::before {
 }
 
 .faq-question:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--gray-50);
 }
 
 .faq-question h3 {

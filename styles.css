@@ -1641,15 +1641,14 @@ section::before {
 }
 
 .testimonial-card {
-    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
-    padding: var(--space-5);
-    border-radius: var(--radius-lg);
-    border: 2px solid var(--gray-200);
-    border-left: 4px solid var(--accent);
+    background: var(--white);
+    padding: var(--space-6);
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
 }
 
 .testimonial-card::after {
@@ -1784,15 +1783,15 @@ section::before {
 }
 
 .contact-card {
-    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
-    padding: var(--space-5);
-    border-radius: var(--radius-lg);
-    border: 2px solid var(--gray-200);
+    background: var(--white);
+    padding: var(--space-6);
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
     text-align: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
 }
 
 .contact-card::before {
@@ -1813,9 +1812,9 @@ section::before {
 }
 
 .contact-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    border-color: var(--gray-300);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     background: var(--white);
 }
 
@@ -1932,14 +1931,13 @@ section::before {
 }
 
 .faq-item {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-bottom: var(--space-4);
-    box-shadow: var(--shadow-sm);
-    position: relative;
+    transition: all var(--transition);
+    margin-bottom: var(--space-3);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
 }
 
 .faq-item::before {

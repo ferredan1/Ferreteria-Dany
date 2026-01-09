@@ -318,20 +318,20 @@ function initFAQ() {
         // Estado inicial cerrado
         item.classList.remove('active');
         answer.style.maxHeight = '0';
-        answer.style.opacity = '0';
+        answer.style.padding = '0';
         answer.style.overflow = 'hidden';
-        answer.style.display = 'block';
         
         // Remover listeners anteriores si existen
-        const newQuestion = question.cloneNode(true);
-        question.parentNode.replaceChild(newQuestion, question);
+        const existingListener = question.getAttribute('data-listener-attached');
+        if (existingListener) {
+            return; // Ya tiene listener, no duplicar
+        }
+        question.setAttribute('data-listener-attached', 'true');
         
         // Event listener directo
-        newQuestion.addEventListener('click', function(e) {
+        question.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            
-            console.log('Click en FAQ item', index);
             
             const isActive = item.classList.contains('active');
             
@@ -358,8 +358,10 @@ function initFAQ() {
                 
                 // Medir altura real del contenido
                 answer.style.maxHeight = 'none';
+                answer.style.display = 'block';
                 const height = answer.scrollHeight;
                 answer.style.maxHeight = '0';
+                answer.style.display = '';
                 
                 // Forzar reflow
                 void answer.offsetHeight;

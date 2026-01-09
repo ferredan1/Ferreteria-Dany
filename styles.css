@@ -813,11 +813,6 @@ section {
     margin-bottom: var(--space-md);
 }
 
-.segment-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
 
 .segment-card h4 {
     font-size: 1.5rem;
@@ -915,11 +910,6 @@ section {
     line-height: 1.7;
 }
 
-.product-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
 
 .product-icon {
     width: 64px;
@@ -1289,11 +1279,6 @@ section {
     line-height: 1.7;
 }
 
-.differential-feature:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
 
 .differential-icon {
     width: 64px;
@@ -1507,11 +1492,6 @@ section {
     line-height: 1.7;
 }
 
-.contact-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
 
 .contact-icon {
     width: 48px;

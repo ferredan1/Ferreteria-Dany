@@ -1,6 +1,9 @@
 {
   "version": 2,
-  "public": true,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "installCommand": null,
+  "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
@@ -9,7 +12,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "text/css"
+          "value": "text/css; charset=utf-8"
         },
         {
           "key": "Cache-Control",
@@ -22,7 +25,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "application/javascript; charset=utf-8"
         },
         {
           "key": "Cache-Control",

@@ -1,0 +1,9 @@
+app/
+next.config.ts
+next-env.d.ts
+tsconfig.json
+eslint.config.mjs
+postcss.config.mjs
+node_modules/
+package-lock.json
+

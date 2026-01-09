@@ -615,9 +615,9 @@ body {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: var(--space-6);
-    align-items: start;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-8);
+    align-items: center;
 }
 
 .hero-text {
@@ -831,6 +831,14 @@ section {
     overflow: hidden;
 }
 
+section:nth-child(even) {
+    background: var(--gray-50);
+}
+
+section:nth-child(odd) {
+    background: var(--white);
+}
+
 section::before {
     content: '';
     position: absolute;
@@ -839,14 +847,17 @@ section::before {
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--space-7);
+    margin-bottom: var(--space-8);
     position: relative;
-    padding-bottom: var(--space-4);
+    padding-bottom: var(--space-5);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-badge {
@@ -885,12 +896,13 @@ section::before {
    QUIÉNES SOMOS
    ============================================ */
 .about-section {
-    background: var(--white);
+    background: var(--gray-50);
+    padding: var(--space-8) 0;
 }
 
 .about-content-institutional {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.3fr 0.7fr;
     gap: var(--space-8);
     align-items: start;
     margin-top: var(--space-6);
@@ -926,7 +938,8 @@ section::before {
 .about-stats-sidebar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-3);
+    gap: var(--space-4);
+    align-content: start;
 }
 
 .about-stat-box {
@@ -981,13 +994,16 @@ section::before {
 
 .mission-block {
     margin-top: var(--space-8);
-    padding: var(--space-7);
+    padding: var(--space-8);
     background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
     border-radius: var(--radius-lg);
-    border-left: 4px solid var(--accent);
-    box-shadow: var(--shadow-md);
+    border-left: 5px solid var(--accent);
+    box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mission-block::before {
@@ -1032,7 +1048,8 @@ section::before {
    SERVICIOS
    ============================================ */
 .services-section {
-    background: var(--gray-50);
+    background: var(--white);
+    padding: var(--space-8) 0;
 }
 
 .services-process-segmentation-row {
@@ -1272,9 +1289,10 @@ section::before {
 
 .services-grid-varied {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: var(--space-4);
-    margin-top: var(--space-5);
+    margin-top: var(--space-6);
+    grid-auto-rows: minmax(200px, auto);
 }
 
 .service-card-large,
@@ -1291,27 +1309,44 @@ section::before {
 }
 
 .service-card-large {
-    grid-column: span 2;
-    min-height: 280px;
+    grid-column: span 5;
+    grid-row: span 2;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 .service-card-medium {
-    grid-column: span 2;
+    grid-column: span 4;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.service-card-medium:nth-of-type(2) {
+    grid-column: span 3;
+}
+
+.service-card-small {
+    grid-column: span 3;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-.service-card-small {
-    grid-column: span 1;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.service-card-small:nth-of-type(4) {
+    grid-column: span 4;
+}
+
+.service-card-small:nth-of-type(5) {
+    grid-column: span 4;
+}
+
+.service-card-small:nth-of-type(6) {
+    grid-column: span 4;
 }
 
 /* Mejoras de hover para tarjetas de servicios */
@@ -1424,6 +1459,17 @@ section::before {
     gap: var(--space-6);
     align-items: stretch;
     margin-top: var(--space-6);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.differential-feature:nth-child(2) {
+    transform: translateY(-15px);
+}
+
+.differential-feature:nth-child(3) {
+    transform: translateY(15px);
 }
 
 .differential-feature {
@@ -1493,6 +1539,7 @@ section::before {
    ============================================ */
 .testimonials-section {
     background: var(--white);
+    padding: var(--space-8) 0;
 }
 
 .testimonials-slider {
@@ -1501,6 +1548,17 @@ section::before {
     gap: var(--space-5);
     margin-bottom: var(--space-6);
     margin-top: var(--space-6);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-card:nth-child(2) {
+    transform: translateY(20px);
+}
+
+.testimonial-card:nth-child(3) {
+    transform: translateY(10px);
 }
 
 .testimonial-card {
@@ -1617,6 +1675,7 @@ section::before {
    ============================================ */
 .contact-section {
     background: var(--gray-50);
+    padding: var(--space-8) 0;
 }
 
 .contact-grid {
@@ -1624,6 +1683,25 @@ section::before {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-5);
     margin-top: var(--space-6);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card:nth-child(1) {
+    grid-column: span 2;
+}
+
+.contact-card:nth-child(2) {
+    grid-column: span 2;
+}
+
+.contact-card:nth-child(3) {
+    grid-column: span 2;
+}
+
+.contact-card:nth-child(4) {
+    grid-column: span 2;
 }
 
 .contact-card {

@@ -75,6 +75,17 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--gray-800);
+    background: var(--white);
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+}
+
 /* Tipografía para headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font);
@@ -126,6 +137,8 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 var(--space-4);
+    position: relative;
+    z-index: 1;
 }
 
 /* ============================================
@@ -175,22 +188,36 @@ body {
     
     .process-steps-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
     }
     
     .services-grid-varied {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
     }
     
     .service-card-large {
         grid-column: span 2;
     }
     
+    .segments-grid-integrated {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .differential-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
     .testimonials-slider {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
     }
     
     .contact-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
     }
     
     .footer-content {
@@ -199,6 +226,11 @@ body {
     
     .about-stats-sidebar {
         grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-3);
+    }
+    
+    .about-content-institutional {
+        gap: var(--space-6);
     }
     
     .floating-text {
@@ -713,11 +745,26 @@ body {
    ============================================ */
 section {
     padding: var(--space-8) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+    opacity: 0.5;
 }
 
 .section-header {
     text-align: center;
     margin-bottom: var(--space-7);
+    position: relative;
+    padding-bottom: var(--space-4);
 }
 
 .section-badge {
@@ -762,8 +809,9 @@ section {
 .about-content-institutional {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-7);
+    gap: var(--space-8);
     align-items: start;
+    margin-top: var(--space-6);
 }
 
 .about-main-content {
@@ -800,18 +848,39 @@ section {
 }
 
 .about-stat-box {
-    background: var(--white);
-    padding: var(--space-4);
-    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
     border: 2px solid var(--gray-200);
     text-align: center;
-    transition: all var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.about-stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-stat-box:hover::before {
+    transform: scaleX(1);
 }
 
 .about-stat-box:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    background: var(--white);
 }
 
 .about-stat-number {
@@ -829,11 +898,24 @@ section {
 }
 
 .mission-block {
-    margin-top: var(--space-7);
-    padding: var(--space-6);
-    background: var(--gray-50);
+    margin-top: var(--space-8);
+    padding: var(--space-7);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
     border-radius: var(--radius-lg);
     border-left: 4px solid var(--accent);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent), var(--accent-dark));
 }
 
 .mission-content {
@@ -891,26 +973,47 @@ section {
 .segments-grid-integrated {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-5);
+    margin-top: var(--space-5);
 }
 
 .segment-card-integrated {
-    background: var(--white);
-    padding: var(--space-4);
-    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
     border: 2px solid var(--gray-200);
-    transition: all var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.segment-card-integrated::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.segment-card-integrated:hover::before {
+    transform: scaleX(1);
 }
 
 .segment-card-integrated:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    background: var(--white);
 }
 
 .segment-title-integrated {
@@ -957,22 +1060,42 @@ section {
 .process-steps-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-5);
+    margin-top: var(--space-6);
 }
 
 .process-step-card {
     background: var(--white);
-    padding: var(--space-4);
-    border-radius: var(--radius);
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
     border: 2px solid var(--gray-200);
     text-align: center;
-    transition: all var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.process-step-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(230, 57, 70, 0.03) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-step-card:hover::after {
+    opacity: 1;
 }
 
 .process-step-card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
 }
 
 .process-step-number {
@@ -1060,7 +1183,8 @@ section {
 .services-grid-varied {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-5);
+    margin-top: var(--space-5);
 }
 
 .service-card-large,
@@ -1072,7 +1196,8 @@ section {
     border: 2px solid var(--gray-200);
     position: relative;
     overflow: hidden;
-    transition: all var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
 }
 
 .service-card-large {
@@ -1107,7 +1232,8 @@ section {
 .service-card-medium:hover,
 .service-card-small:hover {
     transform: translateY(-8px) scale(1.02);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent);
 }
 
 .service-card-large::before,
@@ -1208,8 +1334,9 @@ section {
 .differential-features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-6);
     align-items: stretch;
+    margin-top: var(--space-6);
 }
 
 .differential-feature {
@@ -1217,14 +1344,38 @@ section {
     flex-direction: column;
     align-items: center;
     gap: var(--space-3);
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.95);
     border-radius: var(--radius-lg);
-    padding: var(--space-4);
-    border: 1px solid rgba(148, 163, 184, 0.5);
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+    padding: var(--space-5);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     text-align: left;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.differential-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--whatsapp));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.differential-feature:hover::before {
+    transform: scaleX(1);
+}
+
+.differential-feature:hover {
+    transform: translateY(-6px);
+    border-color: rgba(148, 163, 184, 0.6);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .differential-feature svg {
@@ -1260,23 +1411,45 @@ section {
 .testimonials-slider {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-5);
     margin-bottom: var(--space-6);
+    margin-top: var(--space-6);
 }
 
 .testimonial-card {
-    background: var(--white);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
     padding: var(--space-5);
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-200);
     border-left: 4px solid var(--accent);
-    transition: all var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.testimonial-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover::after {
+    transform: scaleY(1);
 }
 
 .testimonial-card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    background: var(--white);
 }
 
 .testimonial-header {
@@ -1362,22 +1535,44 @@ section {
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-5);
+    margin-top: var(--space-6);
 }
 
 .contact-card {
-    background: var(--white);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
     padding: var(--space-5);
     border-radius: var(--radius-lg);
     border: 2px solid var(--gray-200);
     text-align: center;
-    transition: all var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover::before {
+    transform: scaleX(1);
 }
 
 .contact-card:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(230, 57, 70, 0.15);
+    background: var(--white);
 }
 
 .contact-icon {

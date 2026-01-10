@@ -96,11 +96,6 @@ body {
     padding: 0 var(--space-xl);
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 var(--space-md);
-    }
-}
 
 /* ============================================
    TOP BAR
@@ -163,24 +158,6 @@ body {
     color: var(--accent);
 }
 
-@media (max-width: 768px) {
-    .top-bar {
-        font-size: 0.75rem;
-        padding: var(--space-xs) 0;
-    }
-    
-    .top-bar-links {
-        gap: var(--space-xs);
-    }
-    
-    .top-bar-links a {
-        font-size: 0.75rem;
-    }
-    
-    .separator {
-        display: none;
-    }
-}
 
 /* ============================================
    HEADER
@@ -1338,19 +1315,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .floating-whatsapp {
-        width: 56px;
-        height: 56px;
-        bottom: var(--space-lg);
-        right: var(--space-lg);
-    }
-    
-    .floating-whatsapp svg {
-        width: 28px;
-        height: 28px;
-    }
-}
 
 .form-success {
     text-align: center;

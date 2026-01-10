@@ -247,52 +247,22 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observar elementos con clases de animación
+// Observar elementos con animación
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .slide-in-left, .slide-in-right, .scale-in');
-    animatedElements.forEach(el => observer.observe(el));
+    const animatedElements = document.querySelectorAll('.feature-card, .service-card, .step-card, .testimonial-card, .stat-card, .faq-item, .contact-item');
     
-    // Agregar clases de animación a elementos específicos
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach((card, index) => {
-        card.classList.add('fade-in-up');
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach((card, index) => {
-        card.classList.add('fade-in-up');
-        card.style.transitionDelay = `${index * 0.05}s`;
-    });
-    
-    const stepCards = document.querySelectorAll('.step-card');
-    stepCards.forEach((card, index) => {
-        card.classList.add('scale-in');
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    testimonialCards.forEach((card, index) => {
-        card.classList.add('fade-in-up');
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    const statCards = document.querySelectorAll('.stat-card');
-    statCards.forEach((card, index) => {
-        card.classList.add('scale-in');
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach((item, index) => {
-        item.classList.add('fade-in-up');
-        item.style.transitionDelay = `${index * 0.05}s`;
+    animatedElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(el);
     });
 });
 

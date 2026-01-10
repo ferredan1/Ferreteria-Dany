@@ -621,15 +621,9 @@ body {
     line-height: 1.8;
 }
 
-.about-content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
-    align-items: start;
-}
-
 .about-tabs {
-    max-width: 100%;
+    max-width: 1000px;
+    margin: 0 auto var(--space-4xl);
 }
 
 .tab-buttons {

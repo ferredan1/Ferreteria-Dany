@@ -1001,6 +1001,12 @@ body {
     z-index: 999;
     transition: var(--transition);
     animation: pulse-whatsapp 2s ease-in-out infinite;
+    transform: translateX(0);
+}
+
+.floating-whatsapp svg {
+    display: block;
+    margin: 0 auto;
 }
 
 .floating-whatsapp:hover {

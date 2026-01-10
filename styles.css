@@ -1484,121 +1484,410 @@ body {
     }
 }
 
-    margin-bottom: var(--space-lg);
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: var(--space-sm);
-}
-
-.footer-column a {
-    color: var(--gray-400);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-column a:hover {
-    color: var(--white);
-}
-
-.footer-social {
-    display: flex;
-    gap: var(--space-md);
-    margin-top: var(--space-lg);
-}
-
-.footer-social a {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.footer-social a:hover {
-    background: var(--accent);
-    transform: translateY(-2px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: var(--space-xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-bottom p {
-    color: var(--gray-400);
-    font-size: 0.875rem;
-}
-
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - TABLET LARGE (769px - 1024px)
    ============================================ */
 @media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--space-lg);
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
     .contact-wrapper {
         grid-template-columns: 1fr;
+        gap: var(--space-3xl);
     }
     
     .contact-info {
         padding-right: 0;
     }
-}
-
-@media (max-width: 1024px) {
-    .steps-grid {
+    
+    .section-title {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    .hero-content {
+        padding: var(--space-3xl) 0;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+    
+    .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* ============================================
+   RESPONSIVE - TABLET (481px - 768px)
+   ============================================ */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+    
+    /* Typography */
+    body {
+        font-size: 15px;
+    }
+    
+    .section-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: var(--space-xl);
+    }
+    
+    .section-description {
+        font-size: 0.9375rem;
+        max-width: 100%;
+    }
+    
+    /* Hero */
+    .hero-slider {
+        min-height: 70vh;
+    }
+    
+    .hero-content {
+        padding: var(--space-2xl) 0;
+    }
+    
     .hero-title {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        margin-bottom: var(--space-md);
     }
     
     .hero-subtitle {
-        font-size: 1.125rem;
+        font-size: clamp(0.9375rem, 2vw, 1.125rem);
+        margin-bottom: var(--space-xl);
     }
     
     .hero-actions {
         flex-direction: column;
+        gap: var(--space-md);
+        width: 100%;
     }
     
+    .hero-controls {
+        padding: 0 var(--space-md);
+    }
+    
+    .hero-prev,
+    .hero-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .hero-dots {
+        bottom: var(--space-lg);
+    }
+    
+    /* Top Bar */
+    .top-bar {
+        font-size: 0.75rem;
+        padding: var(--space-xs) 0;
+    }
+    
+    .top-bar-links {
+        gap: var(--space-xs);
+    }
+    
+    .top-bar-links a {
+        font-size: 0.75rem;
+    }
+    
+    .separator {
+        display: none;
+    }
+    
+    /* Buttons */
     .btn-primary,
     .btn-secondary {
         width: 100%;
         justify-content: center;
+        padding: var(--space-md) var(--space-xl);
+        font-size: 0.9375rem;
+        min-height: 48px;
     }
     
-    .features-grid,
-    .services-grid,
+    /* Grids */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
     .testimonials-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
     
     .steps-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
     }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
     }
     
+    /* Sections */
+    .features-section,
+    .about-section,
+    .services-section,
+    .testimonials-section,
+    .contact-section,
+    .faq-section {
+        padding: var(--space-3xl) 0;
+    }
+    
+    /* About Tabs */
+    .tab-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+    
+    .tab-btn {
+        flex: 1;
+        min-width: 120px;
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.875rem;
+    }
+    
+    .tab-content {
+        padding: var(--space-lg);
+        min-height: auto;
+    }
+    
+    /* Contact */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        margin-top: var(--space-3xl);
+    }
+    
+    .contact-form-wrapper {
+        padding: var(--space-lg);
+    }
+    
+    .contact-item {
+        margin-bottom: var(--space-lg);
+    }
+    
+    /* Form */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Evita zoom en iOS */
+        min-height: 48px;
+    }
+    
+    /* Step Cards */
+    .step-number {
+        font-size: 3rem;
+    }
+    
+    .step-card {
+        padding: var(--space-lg);
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-2xl);
+    }
+    
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+        width: 56px;
+        height: 56px;
+        bottom: var(--space-lg);
+        right: var(--space-lg);
+    }
+    
+    .floating-whatsapp svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (hasta 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+    
+    /* Typography */
+    body {
+        font-size: 14px;
+    }
+    
+    .section-title {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .section-label {
+        font-size: 0.75rem;
+        padding: var(--space-xs) var(--space-md);
+    }
+    
+    /* Hero */
+    .hero-slider {
+        min-height: 60vh;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.75rem, 7vw, 2.25rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.875rem, 3vw, 1rem);
+    }
+    
+    .hero-actions {
+        gap: var(--space-sm);
+    }
+    
+    /* Grids - Mobile */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    /* Cards */
+    .feature-card,
+    .service-card,
+    .testimonial-card,
+    .step-card,
+    .stat-card {
+        padding: var(--space-lg);
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: var(--space-md);
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: var(--space-md);
+    }
+    
+    /* About Tabs */
     .tab-buttons {
         flex-direction: column;
+        gap: var(--space-xs);
     }
     
     .tab-btn {
         width: 100%;
+        padding: var(--space-md);
     }
     
+    /* Contact */
+    .contact-item {
+        flex-direction: column;
+        gap: var(--space-sm);
+        align-items: flex-start;
+    }
+    
+    .contact-item svg {
+        margin-top: 0;
+    }
+    
+    /* Form */
+    .form-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .form-card p {
+        font-size: 0.875rem;
+    }
+    
+    /* Step Number */
     .step-number {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+        width: 56px;
+        height: 56px;
+        bottom: var(--space-md);
+        right: var(--space-md);
+    }
+    
+    .floating-whatsapp svg {
+        width: 28px;
+        height: 28px;
     }
 }

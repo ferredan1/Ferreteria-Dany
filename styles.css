@@ -87,6 +87,87 @@ body {
 }
 
 /* ============================================
+   TOP BAR
+   ============================================ */
+.top-bar {
+    background: var(--primary);
+    color: var(--white);
+    padding: var(--space-sm) 0;
+    font-size: 0.875rem;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.top-bar-links a {
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: var(--transition);
+    font-size: 0.875rem;
+}
+
+.top-bar-links a:hover {
+    color: var(--accent);
+}
+
+.top-bar-links svg {
+    width: 16px;
+    height: 16px;
+}
+
+.separator {
+    color: var(--gray-400);
+    margin: 0 var(--space-xs);
+}
+
+.top-bar-social {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.top-bar-social a {
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.top-bar-social a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        font-size: 0.75rem;
+        padding: var(--space-xs) 0;
+    }
+    
+    .top-bar-links {
+        gap: var(--space-xs);
+    }
+    
+    .top-bar-links a {
+        font-size: 0.75rem;
+    }
+    
+    .separator {
+        display: none;
+    }
+}
+
+/* ============================================
    HEADER
    ============================================ */
 .main-header {
@@ -593,6 +674,13 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-2xl);
+    margin-bottom: var(--space-5xl);
+}
+
+.how-we-work-wrapper {
+    margin-top: var(--space-5xl);
+    padding-top: var(--space-5xl);
+    border-top: 1px solid var(--gray-200);
 }
 
 .service-card {
@@ -1007,10 +1095,13 @@ body {
 .floating-whatsapp svg {
     width: 32px;
     height: 32px;
-    display: block;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     flex-shrink: 0;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .floating-whatsapp:hover {

@@ -1090,7 +1090,9 @@ body {
     transition: var(--transition);
     animation: pulse-whatsapp 2s ease-in-out infinite;
     text-decoration: none;
-    line-height: 0;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
 }
 
 .floating-whatsapp svg {
@@ -1100,7 +1102,10 @@ body {
     margin: 0;
     flex-shrink: 0;
     display: block;
-    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .floating-whatsapp:hover {

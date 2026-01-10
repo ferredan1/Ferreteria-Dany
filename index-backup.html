@@ -11,6 +11,10 @@
     <meta name="language" content="Spanish">
     <meta name="geo.region" content="AR-C">
     <meta name="geo.placename" content="Buenos Aires">
+    <meta name="theme-color" content="#0a0e27">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -23,6 +27,13 @@
     <meta property="twitter:url" content="https://ferreteriadany.com.ar/">
     <meta property="twitter:title" content="Ferretería Dany - Soluciones para tu obra, hogar e industria">
     <meta property="twitter:description" content="Más de 30 años abasteciendo a profesionales y particulares en CABA y Gran Buenos Aires.">
+    <meta property="twitter:image" content="https://ferreteriadany.com.ar/og-image.jpg">
+    
+    <!-- Open Graph Image -->
+    <meta property="og:image" content="https://ferreteriadany.com.ar/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ferretería Dany - Más de 30 años en CABA y Gran Buenos Aires">
     
     <title>Ferretería Dany - Soluciones para tu obra, hogar, industria y proyectos técnicos</title>
     
@@ -33,7 +44,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <link rel="stylesheet" href="styles.css?v=29.0">
+    <!-- CSS Principal - CARGAR PRIMERO -->
+    <link rel="stylesheet" href="styles.css?v=93.0">
     
     <!-- Schema JSON-LD para SEO Local -->
     <script type="application/ld+json">
@@ -84,6 +96,51 @@
         "sameAs": [
             "https://www.instagram.com/ferreteriadany",
             "https://www.facebook.com/profile.php?id=100063585068113"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "100"
+        }
+    }
+    </script>
+    
+    <!-- Breadcrumbs Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://ferreteriadany.com.ar/#inicio"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Servicios",
+                "item": "https://ferreteriadany.com.ar/#servicios"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sobre nosotros",
+                "item": "https://ferreteriadany.com.ar/#nosotros"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Opiniones",
+                "item": "https://ferreteriadany.com.ar/#opiniones"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Contacto",
+                "item": "https://ferreteriadany.com.ar/#contacto"
+            }
         ]
     }
     </script>
@@ -95,9 +152,21 @@
             <div class="top-bar-content">
                 <div class="top-bar-links">
                     <span>Ver sucursales:</span>
-                    <a href="https://maps.app.goo.gl/pDaFAigma7ReP8Fi6" target="_blank" rel="noopener noreferrer">Sucursal 1</a>
+                    <a href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7" target="_blank" rel="noopener noreferrer" class="casa-central-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Ver CASA CENTRAL en Maps
+                    </a>
                     <span class="separator">|</span>
-                    <a href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7" target="_blank" rel="noopener noreferrer">Sucursal 2</a>
+                    <a href="https://maps.app.goo.gl/pDaFAigma7ReP8Fi6" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Ver Sucursal en Maps
+                    </a>
                 </div>
                 <div class="top-bar-social">
                     <a href="https://www.instagram.com/ferreteriadany" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -112,22 +181,20 @@
                     </a>
                 </div>
             </div>
-        </div>
     </div>
 
     <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="#inicio" class="logo" aria-label="Ferretería Dany - Inicio">
-                    <h1>FERRETERÍA <span class="logo-accent">DANY.</span></h1>
-                    <span class="logo-subtitle">Hogar | Gremio | Industria</span>
-                </a>
-                <ul class="nav-menu" id="navMenu">
+    <header class="header" id="mainHeader">
+        <div class="header-content">
+            <a href="#inicio" class="logo" aria-label="Ferretería Dany - Inicio">
+                FERRETERÍA <span class="logo-accent">DANY.</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-links" id="navMenu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="https://ferreteriadany.com.ar/" target="_blank" rel="noopener noreferrer">Tienda Online</a></li>
-                    <li><a href="#presupuesto">Presupuesto</a></li>
+                    <li><a href="#nosotros">Sobre nosotros</a></li>
                     <li><a href="#opiniones">Opiniones</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                     <li><a href="#faq">FAQ</a></li>
@@ -142,48 +209,50 @@
     </header>
 
     <!-- HERO SECTION -->
+    <main id="main-content">
     <section class="hero" id="inicio">
-        <div class="hero-background"></div>
         <div class="container">
-            <div class="hero-content fade-in">
-                <div class="hero-text">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <span class="hero-badge">FERRETERÍA DANY</span>
                     <h1 class="hero-title">
                         Soluciones para tu obra, hogar e industria
                     </h1>
                     <p class="hero-subtitle">
-                        Más de 30 años abasteciendo a profesionales y particulares en CABA y Gran Buenos Aires. Stock disponible y respuesta inmediata.
+                        Más de 30 años abasteciendo a profesionales y particulares en CABA y Gran Buenos Aires. Stock inmediato, respuesta rápida y precios competitivos.
                     </p>
                     <div class="hero-cta">
-                        <a href="tel:+5491120345160" class="btn-call" id="heroLlamar">
+                        <a href="tel:+5491120345160" class="btn-primary-hero" id="heroCall">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
-                            Llamar ahora
+                            Llamar
                         </a>
-                        <a href="https://ferreteriadany.com.ar/" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-store" id="heroTienda">
+                        <a href="https://ferreteriadany.com.ar/" target="_blank" rel="noopener noreferrer" class="btn-secondary-hero" id="heroTienda">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                                 <line x1="3" y1="6" x2="21" y2="6"/>
                                 <path d="M16 10a4 4 0 0 1-8 0"/>
                             </svg>
-                            Acceder a la tienda
+                            Ver tienda online
                         </a>
                     </div>
                 </div>
-                <div class="hero-form-wrapper" id="presupuesto">
-                    <div class="form-card slide-up">
-                        <h2 class="form-title">Solicitá tu presupuesto</h2>
+                <div class="hero-form-wrapper">
+                    <div class="form-card">
+                        <h2 class="form-title">Cotizá por WhatsApp</h2>
+                        <p class="form-subtitle">Completá el formulario y te respondemos al instante</p>
                         <form id="quoteForm" class="quote-form">
                             <div class="form-group">
-                                <label for="name">Nombre completo</label>
+                                <label for="name">Nombre completo <span class="required-asterisk">*</span></label>
                                 <input type="text" id="name" name="name" required placeholder="Tu nombre">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Teléfono / WhatsApp</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="11 2034-5160">
+                                <label for="phone">Teléfono / WhatsApp <span class="required-asterisk">*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Ej: 11 5555 5555">
                             </div>
                             <div class="form-group">
-                                <label for="service">Rubro</label>
+                                <label for="service">Rubro <span class="required-asterisk">*</span></label>
                                 <select id="service" name="service" required>
                                     <option value="">Seleccioná un rubro</option>
                                     <option value="herramientas">Herramientas</option>
@@ -196,14 +265,14 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="message">Mensaje</label>
+                                <label for="message">Mensaje <span class="required-asterisk">*</span></label>
                                 <textarea id="message" name="message" rows="4" required placeholder="Detallá qué productos necesitás"></textarea>
                             </div>
                             <button type="submit" class="btn-primary btn-full">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/>
                                 </svg>
-                                Enviar consulta
+                                Cotizar por WhatsApp
                             </button>
                         </form>
                         <div id="formSuccess" class="form-success" style="display: none;">
@@ -212,8 +281,8 @@
                                 <polyline points="22 4 12 14.01 9 11.01"/>
                             </svg>
                             <h3>¡Consulta enviada!</h3>
-                            <p>Te contactaremos a la brevedad. También podés escribirnos directamente por WhatsApp.</p>
-                            <a href="https://wa.me/5491120345160?text=Hola%20quiero%20un%20presupuesto" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <p>Se abrió WhatsApp con tu consulta. Si no se abrió automáticamente, hacé clic en el botón de abajo.</p>
+                            <a href="#" id="whatsappRetryLink" target="_blank" rel="noopener noreferrer" class="btn-primary">
                                 Abrir WhatsApp
                             </a>
                         </div>
@@ -223,135 +292,18 @@
         </div>
     </section>
 
-    <!-- SEGMENTACIÓN -->
-    <section class="segmentation-section">
-        <div class="container">
-            <div class="segmentation-buttons fade-in">
-                <a href="#profesional" class="segmentation-btn segmentation-btn-profesional">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                    <span>Soy profesional</span>
-                </a>
-                <a href="#particular" class="segmentation-btn segmentation-btn-particular">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                        <polyline points="9 22 9 12 15 12 15 22"/>
-                    </svg>
-                    <span>Soy particular</span>
-                </a>
-                <a href="#empresa" class="segmentation-btn segmentation-btn-empresa">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="9" y1="3" x2="9" y2="21"/>
-                        <line x1="3" y1="9" x2="21" y2="9"/>
-                    </svg>
-                    <span>Soy empresa</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEGMENTOS ESPECÍFICOS -->
-    <section class="segments-grid-section">
-        <div class="container">
-            <div class="segments-grid">
-                <div class="segment-section segment-profesional" id="profesional">
-                    <div class="segment-content fade-in">
-                        <h2 class="segment-title">Para profesionales</h2>
-                        <p class="segment-main-benefit">Facturación inmediata A y B, sin esperas</p>
-                        <div class="segment-benefits">
-                            <p>Descuentos por volumen y condiciones preferenciales</p>
-                            <p>Logística coordinada para obras grandes</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="segment-section segment-particular" id="particular">
-                    <div class="segment-content fade-in">
-                        <h2 class="segment-title">Para particulares</h2>
-                        <p class="segment-main-benefit">Te ayudamos a encontrar lo que necesitás, sin vueltas</p>
-                        <div class="segment-benefits">
-                            <p>Envíos a domicilio en CABA y GBA</p>
-                            <p>Atención personalizada para tu proyecto</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="segment-section segment-empresa" id="empresa">
-                    <div class="segment-content fade-in">
-                        <h2 class="segment-title">Para empresas</h2>
-                        <p class="segment-main-benefit">Cuenta asignada con seguimiento dedicado</p>
-                        <div class="segment-benefits">
-                            <p>Disponibilidad garantizada para proyectos grandes</p>
-                            <p>Planes de pago y financiación</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUIÉNES SOMOS -->
-    <section class="about-section" id="nosotros">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Quiénes Somos</span>
-                <h2 class="section-title">Ferretería Dany</h2>
-            </div>
-            <div class="about-content-institutional fade-in">
-                <div class="about-main-content">
-                    <p class="about-intro-text">Ferretería Dany es una empresa familiar fundada en 1994, dedicada a la comercialización de productos para la construcción, el hogar y la industria.</p>
-                    <p class="about-text">Trabajamos con el objetivo de ser un proveedor de confianza al que nuestros clientes puedan recurrir cuando necesitan una solución rápida y efectiva.</p>
-                    <p class="about-text">Con el paso de los años ampliamos nuestro surtido para acompañar cada proyecto, obra o reparación. Crecimos junto a nuestros clientes, manteniendo el trato cercano y el compromiso con la calidad.</p>
-                    <p class="about-text">Trabajamos permanentemente en ampliar nuestro catálogo e incorporar nuevas tecnologías y canales de venta para que comprar en Ferretería Dany sea cada vez más simple, cómodo y seguro.</p>
-                </div>
-                <div class="about-stats-sidebar">
-                    <div class="about-stat-box">
-                        <div class="about-stat-number">1994</div>
-                        <div class="about-stat-label">Año de fundación</div>
-                    </div>
-                    <div class="about-stat-box">
-                        <div class="about-stat-number">+30</div>
-                        <div class="about-stat-label">Años de experiencia</div>
-                    </div>
-                    <div class="about-stat-box">
-                        <div class="about-stat-number">+10.000</div>
-                        <div class="about-stat-label">Productos disponibles</div>
-                    </div>
-                    <div class="about-stat-box">
-                        <div class="about-stat-number">+1000</div>
-                        <div class="about-stat-label">Clientes satisfechos</div>
-                    </div>
-                    <div class="about-stat-box">
-                        <div class="about-stat-number">2</div>
-                        <div class="about-stat-label">Sucursales</div>
-                    </div>
-                    <div class="about-stat-box">
-                        <div class="about-stat-number">CABA + GBA</div>
-                        <div class="about-stat-label">Zona de cobertura</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <!-- SERVICIOS -->
     <section class="services-section" id="servicios">
         <div class="container">
-                <div class="section-header">
+            <div class="section-header">
                 <span class="section-badge">Nuestros Servicios</span>
                 <h2 class="section-title">Lo que ofrecemos</h2>
                 <p class="section-description">Productos para construcción, hogar e industria en CABA y Gran Buenos Aires</p>
             </div>
             
-            <!-- PROCESO DE TRABAJO -->
-            <div class="services-process-wrapper">
-                <h3 class="services-subtitle">Cómo trabajamos</h3>
+            <!-- CÓMO TRABAJAMOS -->
+            <div class="how-we-work-section">
+                <h3 class="subsection-title">Cómo trabajamos</h3>
                 <div class="process-steps-grid">
                     <div class="process-step-card">
                         <div class="process-step-number">01</div>
@@ -376,12 +328,34 @@
                 </div>
             </div>
             
+            <!-- PARA CADA TIPO DE CLIENTE -->
+            <div class="client-segments-section">
+                <h3 class="subsection-title">Para cada tipo de cliente</h3>
+                <div class="segments-grid">
+                    <div class="segment-card">
+                        <h4>Profesionales</h4>
+                        <p>Facturación A y B inmediata, precios por volumen y logística coordinada para obras.</p>
+                        <a href="https://wa.me/5491120345160?text=Hola%2C%20soy%20profesional%20y%20necesito%20hablar%20con%20ventas" target="_blank" rel="noopener noreferrer" class="segment-cta">Soy profesional → hablá con ventas</a>
+                    </div>
+                    <div class="segment-card">
+                        <h4>Particulares</h4>
+                        <p>Te ayudamos a elegir exactamente qué comprar para no gastar de más. Recomendaciones según tu proyecto y envíos a domicilio.</p>
+                        <a href="https://wa.me/5491120345160?text=Hola%2C%20soy%20particular%20y%20necesito%20asesoramiento" target="_blank" rel="noopener noreferrer" class="segment-cta">Soy particular → asesoramiento sin cargo</a>
+                    </div>
+                    <div class="segment-card">
+                        <h4>Empresas</h4>
+                        <p>Stock reservado, entregas programadas y condiciones especiales de pago y facturación.</p>
+                        <a href="https://wa.me/5491120345160?text=Hola%2C%20represento%20a%20una%20empresa%20y%20necesito%20condiciones%20especiales" target="_blank" rel="noopener noreferrer" class="segment-cta">Soy empresa → condiciones especiales</a>
+                    </div>
+                </div>
+            </div>
+            
             <!-- PRODUCTOS -->
-            <div class="services-products-wrapper">
-                <div class="services-subtitle-wrapper">
-                    <h3 class="services-subtitle">Nuestros productos</h3>
-                    <a href="https://ferreteriadany.com.ar/" target="_blank" rel="noopener noreferrer" class="btn-store-inline">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="products-section">
+                <div class="products-header">
+                    <h3 class="subsection-title">Nuestros productos</h3>
+                    <a href="https://ferreteriadany.com.ar/" target="_blank" rel="noopener noreferrer" class="btn-catalog">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                             <line x1="3" y1="6" x2="21" y2="6"/>
                             <path d="M16 10a4 4 0 0 1-8 0"/>
@@ -389,69 +363,121 @@
                         Ver catálogo completo
                     </a>
                 </div>
-            <div class="services-grid-varied">
-                <div class="service-card-large slide-up" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80');">
-                    <div class="service-icon-large">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="3" y1="9" x2="21" y2="9"/>
-                            <line x1="9" y1="21" x2="9" y2="9"/>
-                        </svg>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                <line x1="9" y1="21" x2="9" y2="9"/>
+                            </svg>
+                        </div>
+                        <h4>Materiales para la construcción</h4>
+                        <p>Productos para obras, reformas y construcción en general.</p>
                     </div>
-                    <h3>Materiales para la construcción</h3>
-                    <p>Productos para obras, reformas y construcción en general.</p>
-                </div>
-                <div class="service-card-medium slide-up" style="background-image: url('https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80');">
-                    <div class="service-icon-medium">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            </svg>
+                        </div>
+                        <h4>Pinturas y terminaciones</h4>
+                        <p>Pinturas y productos para terminaciones de calidad.</p>
                     </div>
-                    <h3>Pinturas y terminaciones</h3>
-                    <p>Pinturas y productos para terminaciones de calidad.</p>
-                </div>
-                <div class="service-card-medium slide-up" style="background-image: url('https://images.unsplash.com/photo-1628177142898-93e36b4f32d3?w=600&q=80');">
-                    <div class="service-icon-medium">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                            <path d="M12 7v6M9 10h6"/>
-                        </svg>
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h4>Griferías y sanitarios</h4>
+                        <p>Inodoros, lavatorios, grifería y accesorios para baños.</p>
                     </div>
-                    <h3>Griferías y sanitarios</h3>
-                    <p>Inodoros, lavatorios, grifería y accesorios para baños.</p>
-                </div>
-                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=80');">
-                    <div class="service-icon-small">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <h4>Electricidad</h4>
+                        <p>Productos eléctricos e iluminación</p>
                     </div>
-                    <h3>Electricidad</h3>
-                    <p>Productos eléctricos e iluminación</p>
-                </div>
-                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80');">
-                    <div class="service-icon-small">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h4>Herramientas</h4>
+                        <p>Para hogar e industria</p>
                     </div>
-                    <h3>Herramientas</h3>
-                    <p>Para hogar e industria</p>
-                </div>
-                <div class="service-card-small slide-up" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80');">
-                    <div class="service-icon-small">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h4>Mantenimiento</h4>
+                        <p>Artículos y accesorios</p>
                     </div>
-                    <h3>Mantenimiento</h3>
-                    <p>Artículos y accesorios</p>
                 </div>
             </div>
+        </div>
+    </section>
+    
+
+    <!-- QUIÉNES SOMOS -->
+    <section class="about-section" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Quiénes Somos</span>
+                <h2 class="section-title">Ferretería Dany</h2>
+            </div>
+            <!-- MISSION & VISION -->
+            <div class="mission-vision-block">
+                <div class="mission-content">
+                    <h3 class="mission-title">Nuestra misión</h3>
+                    <p>Queremos ser el lugar donde cada cliente encuentre la solución que busca, con un trato cercano que entiende sus necesidades reales. Ya sea una obra grande, una reparación doméstica o un proyecto técnico.</p>
+                    <p>Aspiramos a que comprar en Ferretería Dany sea simple, sin complicaciones y con la confianza de que estás eligiendo lo correcto para tu proyecto.</p>
+                </div>
+                <div class="about-info">
+                    <p>Ferretería Dany es una empresa familiar fundada en 1994, dedicada a la comercialización de productos para la construcción, el hogar y la industria.</p>
+                    <ul class="about-list">
+                        <li>Dos sucursales en CABA y Gran Buenos Aires</li>
+                        <li>Más de 10.000 productos disponibles</li>
+                        <li>Más de 30 años de experiencia</li>
+                        <li>Tienda online disponible 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- STATS -->
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">1994</div>
+                    <div class="stat-label">Año de fundación</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">+30</div>
+                    <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">+10.000</div>
+                    <div class="stat-label">Productos disponibles</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">+1000</div>
+                    <div class="stat-label">Clientes satisfechos</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Sucursales</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">CABA + GBA</div>
+                    <div class="stat-label">Zona de cobertura</div>
+                </div>
             </div>
         </div>
     </section>
@@ -459,44 +485,44 @@
     <!-- DIFERENCIAL -->
     <section class="differential-section">
         <div class="container">
-            <div class="differential-content fade-in">
-                <h2 class="differential-title">Lo que nos diferencia</h2>
-                <div class="differential-features">
-                    <div class="differential-feature">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <polyline points="9 12 11 14 15 10"/>
-                        </svg>
-                        <div>
-                            <strong>Stock inmediato en sucursal</strong>
-                            <p>Disponibilidad verificada al momento</p>
-                        </div>
-                    </div>
-                    <div class="differential-feature">
+            <div class="section-header">
+                <span class="section-badge">Lo que nos diferencia</span>
+                <h2 class="section-title">Beneficios clave</h2>
+            </div>
+            <div class="differential-features">
+                <div class="differential-feature">
+                    <div class="differential-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <polyline points="12 6 12 12 16 14"/>
                         </svg>
-                        <div>
-                            <strong>Respuesta en el día</strong>
-                            <p>Consultas y presupuestos sin cargo</p>
-                        </div>
                     </div>
-                    <div class="differential-feature">
+                    <strong>Stock inmediato en sucursal</strong>
+                    <p>Consultamos disponibilidad en tiempo real antes de confirmar tu pedido</p>
+                </div>
+                <div class="differential-feature">
+                    <div class="differential-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
-                        <div>
-                            <strong>Precios competitivos</strong>
-                            <p>Condiciones especiales por volumen</p>
-                        </div>
                     </div>
+                    <strong>Respuesta en el día</strong>
+                    <p>Consultas y presupuestos sin cargo</p>
+                </div>
+                <div class="differential-feature">
+                    <div class="differential-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <strong>Precios competitivos</strong>
+                    <p>Descuentos progresivos según la cantidad que necesites</p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- OPINIONES -->
     <section class="testimonials-section" id="opiniones">
@@ -504,54 +530,31 @@
             <div class="section-header">
                 <span class="section-badge">Opiniones</span>
                 <h2 class="section-title">Opiniones de nuestros clientes en Google</h2>
+                <a href="https://www.google.com/maps/place/Ferreteria+Dany/@-34.5511411,-58.5813384,17z/data=!4m8!3m7!1s0x95bcba21b7eba617:0x81dc5e2c9406a612!8m2!3d-34.5511455!4d-58.5787635!9m1!1b1!16s%2Fg%2F11c1th57nx?entry=ttu&g_ep=EgoyMDI2MDEwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="testimonials-link">Ver todas las opiniones →</a>
             </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card slide-up">
-                    <div class="testimonial-header">
-                        <div class="testimonial-source">Google Review</div>
-                        <div class="testimonial-stars">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                    </div>
-                    <p>"Excelente atención y productos. Me salvaron en una obra urgente. Respondieron rápido y el asesoramiento fue impecable."</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-source">Google Review</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Excelente atención y productos. Me salvaron en una obra urgente. Respondieron rápido y el asesoramiento fue impecable."</p>
                     <div class="testimonial-author">
                         <strong>Carlos Martínez</strong>
                         <span>Palermo, Buenos Aires</span>
                     </div>
                 </div>
-                <div class="testimonial-card slide-up">
-                    <div class="testimonial-header">
-                        <div class="testimonial-source">Google Review</div>
-                        <div class="testimonial-stars">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                    </div>
-                    <p>"El asesoramiento técnico es excelente. Me ayudaron a elegir exactamente lo que necesitaba. Muy recomendable para profesionales."</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-source">Google Review</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El asesoramiento técnico es excelente. Me ayudaron a elegir exactamente lo que necesitaba. Muy recomendable para profesionales."</p>
                     <div class="testimonial-author">
                         <strong>Laura Pérez</strong>
                         <span>Villa Crespo, Buenos Aires</span>
                     </div>
                 </div>
-                <div class="testimonial-card slide-up">
-                    <div class="testimonial-header">
-                        <div class="testimonial-source">Google Review</div>
-                        <div class="testimonial-stars">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                    </div>
-                    <p>"Trabajo con ellos hace más de 5 años. Siempre tienen lo que necesito, los precios son justos y el trato es excelente."</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-source">Google Review</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Trabajo con ellos hace más de 5 años. Siempre tienen lo que necesito, los precios son justos y el trato es excelente."</p>
                     <div class="testimonial-author">
                         <strong>Roberto González</strong>
                         <span>Caballito, Buenos Aires</span>
@@ -559,19 +562,19 @@
                 </div>
             </div>
             <div class="testimonials-actions">
+                <a href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7" target="_blank" rel="noopener noreferrer" class="btn-secondary casa-central-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Ver CASA CENTRAL en Maps
+                </a>
                 <a href="https://maps.app.goo.gl/pDaFAigma7ReP8Fi6" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                         <circle cx="12" cy="10" r="3"/>
                     </svg>
-                    Ver Sucursal 1 en Maps
-                </a>
-                <a href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    Ver Sucursal 2 en Maps
+                    Ver Sucursal en Maps
                 </a>
             </div>
         </div>
@@ -624,6 +627,22 @@
                     </div>
                     <h3>Zona de atención</h3>
                     <p>CABA y Gran Buenos Aires<br>Envíos disponibles</p>
+                    <div class="contact-locations">
+                        <a href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7" target="_blank" rel="noopener noreferrer" class="contact-location-link casa-central-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            CASA CENTRAL
+                        </a>
+                        <a href="https://maps.app.goo.gl/pDaFAigma7ReP8Fi6" target="_blank" rel="noopener noreferrer" class="contact-location-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Sucursal
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -692,12 +711,57 @@
                         <p>Sí. Nuestra tienda online opera con plataformas de pago seguras. No almacenamos los datos completos de tu tarjeta y tu información permanece confidencial durante todo el proceso.</p>
                     </div>
                 </div>
+                <div class="faq-item slide-up">
+                    <div class="faq-question">
+                        <h3>¿Hacen envíos a domicilio?</h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, realizamos envíos a domicilio en CABA y Gran Buenos Aires. El costo y plazo de entrega se calculan según tu ubicación y se muestran durante el proceso de compra.</p>
+                    </div>
+                </div>
+                <div class="faq-item slide-up">
+                    <div class="faq-question">
+                        <h3>¿Puedo cambiar o devolver un producto?</h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceptamos cambios y devoluciones dentro de los plazos establecidos, siempre que el producto esté en su estado original y con su empaque. Contactanos por WhatsApp o teléfono para coordinar.</p>
+                    </div>
+                </div>
+                <div class="faq-item slide-up">
+                    <div class="faq-question">
+                        <h3>¿Ofrecen descuentos por compras al por mayor?</h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos descuentos progresivos según la cantidad que necesites. Para compras al por mayor, contactanos directamente y te armamos un presupuesto con condiciones especiales.</p>
+                    </div>
+                </div>
+                <div class="faq-item slide-up">
+                    <div class="faq-question">
+                        <h3>¿Qué horarios de atención tienen?</h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Lunes a viernes: 8:00 - 12:30 y 14:00 - 18:00. Sábados: 8:00 - 13:00. Domingos: cerrado. También podés contactarnos por WhatsApp fuera de estos horarios y te respondemos a la brevedad.</p>
+                    </div>
+                </div>
             </div>
             <div class="faq-more-link">
                 <p>¿Tenés más preguntas? <a href="/preguntas-frecuentes">Ver todas las preguntas frecuentes →</a></p>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -714,7 +778,7 @@
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="https://ferreteriadany.com.ar/" target="_blank" rel="noopener noreferrer">Tienda Online</a></li>
-                        <li><a href="#presupuesto">Presupuesto</a></li>
+                        <li><a href="#nosotros">Sobre nosotros</a></li>
                         <li><a href="#opiniones">Opiniones</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                         <li><a href="#faq">FAQ</a></li>
@@ -745,9 +809,9 @@
                         </a>
                     </div>
                     <div class="footer-maps">
-                        <a href="https://maps.app.goo.gl/pDaFAigma7ReP8Fi6" target="_blank" rel="noopener noreferrer">Sucursal 1</a>
+                        <a href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7" target="_blank" rel="noopener noreferrer" class="casa-central-link">CASA CENTRAL</a>
                         <span>|</span>
-                        <a href="https://maps.app.goo.gl/j1r7vBfPBVvvzZoM7" target="_blank" rel="noopener noreferrer">Sucursal 2</a>
+                        <a href="https://maps.app.goo.gl/pDaFAigma7ReP8Fi6" target="_blank" rel="noopener noreferrer">Sucursal</a>
                     </div>
                 </div>
             </div>
@@ -757,15 +821,25 @@
         </div>
     </footer>
 
-    <!-- Botón flotante WhatsApp -->
-    <a href="https://wa.me/5491120345160?text=Hola%20quiero%20un%20presupuesto" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floatingWhatsApp" aria-label="WhatsApp">
+    <!-- Botón flotante WhatsApp (solo desktop) -->
+    <a href="https://wa.me/5491120345160?text=Hola%2C%20quiero%20cotizar%20productos" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floatingWhatsApp" aria-label="WhatsApp">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/>
         </svg>
-        <span class="floating-text">¿Te cotizamos ahora?</span>
+        <span class="floating-text" id="floatingText">Cotizar ahora</span>
     </a>
 
-    <script src="script.js?v=2.0"></script>
+    <!-- Sticky CTA Mobile (solo visible en mobile) -->
+    <div class="mobile-sticky-cta" id="mobileStickyCTA">
+        <a href="https://wa.me/5491120345160?text=Hola%2C%20quiero%20cotizar%20productos" target="_blank" rel="noopener noreferrer" class="mobile-sticky-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/>
+            </svg>
+            <span>Cotizá por WhatsApp</span>
+        </a>
+    </div>
+
+    <script src="script.js?v=13.0" defer></script>
     
     <!-- Analytics placeholder (reemplazar con tu código real) -->
     <!-- Google Analytics -->

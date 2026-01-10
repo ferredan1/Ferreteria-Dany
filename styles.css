@@ -843,6 +843,21 @@ body {
     text-align: center;
 }
 
+.testimonials-google-link {
+    display: inline-block;
+    margin-top: var(--space-lg);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.testimonials-google-link:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
 /* ============================================
    FAQ
    ============================================ */

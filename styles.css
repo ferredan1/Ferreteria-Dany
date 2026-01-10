@@ -355,8 +355,27 @@ body {
     transition: var(--transition);
 }
 
+.nav-menu a {
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
 .nav-menu a:hover {
     color: var(--accent);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
 }
 
 .header-cta {
@@ -628,6 +647,12 @@ body {
 .hero-prev:hover,
 .hero-next:hover {
     background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hero-prev:active,
+.hero-next:active {
+    transform: scale(0.95);
 }
 
 .hero-dots {
@@ -649,10 +674,16 @@ body {
     transition: var(--transition);
 }
 
+.dot:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.2);
+}
+
 .dot.active {
     background: var(--white);
     width: 32px;
     border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================
@@ -1220,6 +1251,11 @@ body {
     gap: var(--space-lg);
     cursor: pointer;
     user-select: none;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background: var(--gray-50);
 }
 
 .faq-number {
@@ -1339,8 +1375,17 @@ body {
     gap: var(--space-xs);
 }
 
+.contact-item a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: var(--transition);
+}
+
 .contact-item a:hover {
     color: var(--accent-dark);
+    transform: translateX(4px);
+    gap: var(--space-sm);
 }
 
 .whatsapp-link {

@@ -225,18 +225,74 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const header = document.querySelector('.main-header');
 
 if (header) {
-    let lastScroll = 0;
-    
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
-        if (currentScroll > 100) {
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        if (currentScroll > 50) {
+            header.classList.add('scrolled');
         } else {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            header.classList.remove('scrolled');
         }
-        
-        lastScroll = currentScroll;
     });
 }
+
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observar elementos con clases de animación
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .slide-in-left, .slide-in-right, .scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+    
+    // Agregar clases de animación a elementos específicos
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        card.classList.add('fade-in-up');
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, index) => {
+        card.classList.add('fade-in-up');
+        card.style.transitionDelay = `${index * 0.05}s`;
+    });
+    
+    const stepCards = document.querySelectorAll('.step-card');
+    stepCards.forEach((card, index) => {
+        card.classList.add('scale-in');
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    testimonialCards.forEach((card, index) => {
+        card.classList.add('fade-in-up');
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
+    const statCards = document.querySelectorAll('.stat-card');
+    statCards.forEach((card, index) => {
+        card.classList.add('scale-in');
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item, index) => {
+        item.classList.add('fade-in-up');
+        item.style.transitionDelay = `${index * 0.05}s`;
+    });
+});
 

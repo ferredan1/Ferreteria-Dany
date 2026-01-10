@@ -524,8 +524,8 @@ body {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-2xl);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
 }
 
 .feature-card {
@@ -621,9 +621,15 @@ body {
     line-height: 1.8;
 }
 
+.about-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: start;
+}
+
 .about-tabs {
-    max-width: 1000px;
-    margin: 0 auto var(--space-4xl);
+    max-width: 100%;
 }
 
 .tab-buttons {
@@ -695,9 +701,8 @@ body {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-xl);
-    margin-top: var(--space-4xl);
 }
 
 .stat-card {
@@ -762,8 +767,8 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-2xl);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
     margin-bottom: var(--space-5xl);
 }
 
@@ -923,8 +928,8 @@ body {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-2xl);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
     margin-bottom: var(--space-3xl);
 }
 

@@ -1112,19 +1112,11 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-4xl);
     align-items: start;
+    margin-top: var(--space-4xl);
 }
 
 .contact-info {
     padding-right: var(--space-2xl);
-}
-
-.contact-info .section-label {
-    margin-bottom: var(--space-lg);
-}
-
-.contact-info .section-title {
-    margin-bottom: var(--space-3xl);
-    text-align: left;
 }
 
 .contact-details {
